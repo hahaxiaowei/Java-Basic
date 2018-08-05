@@ -26,8 +26,8 @@ public class PersonShallowCopy implements Cloneable {
     }
 
     @Override
-    protected Object clone() throws CloneNotSupportedException {
-        return super.clone(); //直接调用Object对象的clone()方法
+    protected PersonShallowCopy clone() throws CloneNotSupportedException {
+        return (PersonShallowCopy)super.clone(); //直接调用Object对象的clone()方法
     }
 
     public String getName() {

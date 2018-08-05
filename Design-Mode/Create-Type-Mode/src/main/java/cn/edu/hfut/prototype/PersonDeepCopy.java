@@ -27,12 +27,12 @@ public class PersonDeepCopy implements Cloneable, Serializable {
     }
 
     @Override
-    protected Object clone() throws CloneNotSupportedException {
-        Object obj = super.clone(); //直接调用Object对象的clone()方法
+    protected PersonDeepCopy clone() throws CloneNotSupportedException {
+        PersonDeepCopy s = (PersonDeepCopy) super.clone(); //直接调用Object对象的clone()方法
                 //添加如下代码实现深复制
-        PersonDeepCopy s = (PersonDeepCopy)obj;
+
         s.date = (Date) this.date.clone();
-        return obj;
+        return s;
     }
 
     public String getName() {

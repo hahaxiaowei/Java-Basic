@@ -15,13 +15,14 @@ import java.util.Date;
  * time: 20:27
  */
 public class DeepCopyTest extends TestCase {
+
     public void testDeepCopy()throws Exception{
         Date date = new Date(123123123123L);
         String name = "michel";
         String age = "24";
         String address = "上海";
         PersonDeepCopy deepCopy1 = new PersonDeepCopy(name, age, address, date);
-        PersonDeepCopy deepCopy2 = (PersonDeepCopy) deepCopy1.clone();
+        PersonDeepCopy deepCopy2 = deepCopy1.clone();
 
         System.out.printf(deepCopy1.date+"\r\n");
         System.out.printf(deepCopy2.date+"\r\n");
@@ -40,7 +41,7 @@ public class DeepCopyTest extends TestCase {
 
         PersonDeepCopy deepCopy1 = new PersonDeepCopy(name,age,address,date);
 
-        //        使用序列化和反序列化实现深复制
+        // 使用序列化和反序列化实现深复制
         ByteArrayOutputStream bos = new ByteArrayOutputStream();
         ObjectOutputStream oos = new ObjectOutputStream(bos);
         oos.writeObject(deepCopy1);

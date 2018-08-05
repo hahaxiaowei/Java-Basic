@@ -6,7 +6,7 @@ import cn.edu.hfut.factorymethod.product.Car;
  * Created by SunWei
  * Date: 2018-08-03
  */
-public interface Factory {
+public interface CarFactory {
 
     public Car produce();
 }

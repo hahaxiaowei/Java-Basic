@@ -2,7 +2,6 @@ package cn.edu.hfut.factorymethod;
 
 import cn.edu.hfut.factorymethod.factory.AudiFacoty;
 import cn.edu.hfut.factorymethod.factory.BenzFactory;
-import cn.edu.hfut.factorymethod.factory.Factory;
 import junit.framework.TestCase;
 
 /**

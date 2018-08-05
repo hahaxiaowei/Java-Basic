@@ -7,7 +7,7 @@ import cn.edu.hfut.factorymethod.product.Car;
  * Created by SunWei
  * Date: 2018-08-03
  */
-public class BenzFactory implements Factory{
+public class BenzFactory implements CarFactory {
 
     public Car produce() {
         return new Benz();

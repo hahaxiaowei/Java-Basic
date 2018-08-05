@@ -1,5 +1,7 @@
 package cn.edu.hfut.builder;
 
+import java.io.Serializable;
+
 /**
  * Created by SunWei
  * Date: 2018-08-05

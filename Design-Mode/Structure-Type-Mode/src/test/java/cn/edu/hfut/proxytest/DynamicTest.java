@@ -2,6 +2,7 @@ package cn.edu.hfut.proxytest;
 
 import cn.edu.hfut.proxy.dynamic.GamePlayer;
 import cn.edu.hfut.proxy.dynamic.GamePlayerInvocationHandler;
+import cn.edu.hfut.proxy.dynamic.GamePlayerInvocationHandler2;
 import cn.edu.hfut.proxy.dynamic.IGamePlayer;
 import junit.framework.TestCase;
 
@@ -19,12 +20,23 @@ public class DynamicTest extends TestCase {
         InvocationHandler invocationHandler = new GamePlayerInvocationHandler(iGamePlayer);
         //获取被代理类的加载器
         ClassLoader classLoader = iGamePlayer.getClass().getClassLoader();
-        Class<?>[] cls = new Class[]{IGamePlayer.class};
+        Class<?>[] cls = iGamePlayer.getClass().getInterfaces();
 
         IGamePlayer proxyGp = (IGamePlayer) Proxy.newProxyInstance(classLoader,cls,invocationHandler);
 
+
+        System.out.println();
         proxyGp.login("xiaoming","123456");
         proxyGp.killBoss();
+        proxyGp.upGrade();
+    }
+
+    public void testDynamic2(){
+        GamePlayerInvocationHandler2 invocationHandler2 = new GamePlayerInvocationHandler2();
+        IGamePlayer proxyGp = (IGamePlayer) invocationHandler2.getGamePlayer(new GamePlayer("李四"));
+        proxyGp.login("lisi","2343434"+"\r\n");
+        proxyGp.killBoss();
+        System.out.printf("\r\n");
         proxyGp.upGrade();
     }
 }

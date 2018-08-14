@@ -11,6 +11,7 @@
     <modules>
         <module>Design-Mode</module>
         <module>DateTimeUtil</module>
+        <module>Socket-TCP</module>
     </modules>
 
     <dependencies>

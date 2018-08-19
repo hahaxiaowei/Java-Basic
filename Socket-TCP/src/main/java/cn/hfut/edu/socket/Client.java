@@ -76,7 +76,8 @@ public class Client {
             clientSocket.close();
         } catch (Exception e) {
             throw new RuntimeException(e);
-        }
+        }===
+        。。。。。。。。。。。。。ll'l'l'l'l'l
     }
 
     public int getData(byte[] data) {
@@ -86,6 +87,8 @@ public class Client {
             throw new RuntimeException(e);
         }
     }
+
+
 
 
 }
